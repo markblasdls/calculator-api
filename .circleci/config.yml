@@ -51,7 +51,7 @@ aliases:
       - ~/calculatorapi/vendor/bundle
 
 executors:
-  ruby-postgress:
+  ruby-postgres:
     docker:
       - image: circleci/ruby:2.7.2-buster-node-browsers
         environment:
