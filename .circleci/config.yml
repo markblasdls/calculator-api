@@ -59,6 +59,14 @@ jobs:
       # Run rspec in parallel
       - ruby/rspec-test
 
+  deploy:
+    steps:
+      - checkout
+      - run:
+          name: Deploy to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY_STAGING@git.heroku.com/$HEROKU_CALCULATOR_APP_NAME.git main
+
 # We use workflows to orchestrate the jobs that we declared above.
 workflows:
   version: 2
@@ -68,3 +76,7 @@ workflows:
       - test: # Then run test,
           requires: # Test requires that build passes for it to run.
             - build # Finally, run the build job.
+      - deploy:
+          requires:
+            - deploy
+            - test
