@@ -1,4 +1,4 @@
-# Main URL
+# Main URL Endpoint
 
 - https://calculator-api-main.herokuapp.com/
 
@@ -14,18 +14,39 @@ Before you begin, ensure you have met the following requirements:
 ### Installation
 
 1. Clone this repository
-1. If using WSL:
-   1. Run `sudo chown -R yourusername:yourusername slc-los/`
-1. Make a copy of the `.env.sample` file, saving it as `.env`
 1. Run `docker-compose build`
 1. Run `docker-compose run --rm calc-rails bundle install`
 1. Run `docker-compose run --rm calc-rails rails db:create`
 1. Run `docker-compose run --rm calc-rails rails db:migrate`
 
-### Usage
+### Developement Usage
 
 1. Run `docker-compose up`
 
-# Specs
+### Specs
 
 if you want to run the specs please run `docker-compose run --rm calc-rails rspec .` in project's home directory.
+
+### App usage
+
+Endpoint `/calculate`
+
+1. Receive a form submission with two numbers A and B and an operation (`SUM`, `SUB`, `TIMES`, or `DIVIDE`).
+2. It should return 200 response with the result of the operation.
+
+Example:
+
+```
+curl -X POST 'http://localhost:3000/calculate' \
+--form 'A="100"' \
+--form 'B="50"' \
+--form 'OPERATION="SUM"'
+```
+
+Response:
+
+```
+{
+  "result": 150
+}
+```
