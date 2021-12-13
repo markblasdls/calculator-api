@@ -1,24 +1,31 @@
-# README
+# Main URL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- https://calculator-api-main.herokuapp.com/
 
-Things you may want to cover:
+## Installation and Usage
 
-* Ruby version
+### Prerequisites
 
-* System dependencies
+Before you begin, ensure you have met the following requirements:
 
-* Configuration
+- You have installed Docker
+- You have installed Docker Compose
 
-* Database creation
+### Installation
 
-* Database initialization
+1. Clone this repository
+1. If using WSL:
+   1. Run `sudo chown -R yourusername:yourusername slc-los/`
+1. Make a copy of the `.env.sample` file, saving it as `.env`
+1. Run `docker-compose build`
+1. Run `docker-compose run --rm calc-rails bundle install`
+1. Run `docker-compose run --rm calc-rails rails db:create`
+1. Run `docker-compose run --rm calc-rails rails db:migrate`
 
-* How to run the test suite
+### Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Run `docker-compose up`
 
-* Deployment instructions
+# Specs
 
-* ...
+if you want to run the specs please run `docker-compose run --rm calc-rails rspec .` in project's home directory.
