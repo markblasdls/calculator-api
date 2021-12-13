@@ -56,14 +56,14 @@ executors:
       - image: cimg/ruby:2.7.5
         environment:
           PGHOST: 127.0.0.1
-          PGUSER: root
+          PGUSER: postgres
           RAILS_ENV: test
           RACK_ENV: test
-      - image: circleci/postgres:11-alpine-postgis
+      - image: circleci/postgres:13-alpine-postgis
         environment:
-          POSTGRES_USER: root
+          POSTGRES_USER: postgres
           POSTGRES_DB: calculator_api_test
-          POSTGRES_PASSWORD: ""
+          POSTGRES_PASSWORD: password
           POSTGRES_HOST_AUTH_METHOD: trust
     working_directory: ~/calculatorapi
 
