@@ -2,6 +2,12 @@
 
 - https://calculator-api-main.herokuapp.com/
 
+## Details
+
+RoR API Calaculate endpoint App
+
+This App is using Docker, CircleCI and Heroku for automatic test and deployment or for Continues Integration.
+
 ## Installation and Usage
 
 ### Prerequisites
