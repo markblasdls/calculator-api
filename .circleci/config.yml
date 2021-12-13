@@ -62,9 +62,9 @@ executors:
       - image: circleci/postgres:11-alpine-postgis
         environment:
           POSTGRES_USER: root
-          POSTGRES_DB: speed_leasing_test
+          POSTGRES_DB: calculator_api_test
           POSTGRES_PASSWORD: ""
-      - image: redis
+          POSTGRES_HOST_AUTH_METHOD: trust
     working_directory: ~/calculatorapi
 
 # Define a job to be invoked later in a workflow.
