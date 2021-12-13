@@ -59,7 +59,7 @@ executors:
           PGUSER: postgres
           RAILS_ENV: test
           RACK_ENV: test
-      - image: circleci/postgres:13-alpine-postgis
+      - image: circleci/postgres:12-alpine-postgis
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: calculator_api_test
