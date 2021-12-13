@@ -78,5 +78,4 @@ workflows:
             - build # Finally, run the build job.
       - deploy:
           requires:
-            - build
             - test
