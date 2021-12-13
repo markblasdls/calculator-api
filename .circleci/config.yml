@@ -59,7 +59,7 @@ executors:
           PGUSER: root
           RAILS_ENV: test
           RACK_ENV: test
-      - image: circleci/postgres:13.4-alpine-postgis
+      - image: circleci/postgres:13-postgis-ram
         environment:
           POSTGRES_USER: root
           POSTGRES_DB: speed_leasing_test
