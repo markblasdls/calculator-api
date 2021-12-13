@@ -53,7 +53,7 @@ aliases:
 executors:
   ruby-postgres:
     docker:
-      - image: circleci/ruby:2.7.5-buster-node-browsers
+      - image: cimg/ruby:2.7.5
         environment:
           PGHOST: 127.0.0.1
           PGUSER: root
@@ -72,7 +72,7 @@ executors:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7.5-stretch-node
+      - image: cimg/ruby:2.7.5
     executor: ruby/default
     steps:
       - checkout
